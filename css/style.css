@@ -1,0 +1,20 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  height: calc(100vh - 105px - 105px);
+}
+
+.foursquare {
+  width: 100%;
+  margin-bottom: 15px;
+}

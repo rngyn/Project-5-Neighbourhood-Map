@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="css/plume.css">
+  <link rel="stylesheet" type="text/css" href="css/siimple.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/nanoscroller.css">
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.nanoscroller.js"></script>
+
+  <script>
+      $(document).ready(function(){
+           $(".nano").nanoScroller();
+      });
+  </script>
+
+  <title>yycEats</title>
+</head>
+
+<body>
+<div class="plume plume--js">
+  <div class="plume-sidebar">
+    <div class="plume-menu">
+      <div class="siimple-h3">yycEats</div>
+      <img class="foursquare" src="img/Powered-by-Foursquare-one-color-300.png">
+      <div class="siimple-form-field">
+        <input type="text" class="siimple-input siimple-input--fluid" data-bind="textInput: filter" placeholder="search">
+      </div>
+      <div class="nano">
+          <ul data-bind='foreach: filteredLocations' class="nano-content">
+            <li class="siimple-menu-item" data-bind="text: title, click: $parent.setLocation"></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  <div class="plume-toggle"><span></span></div>
+  <div id="map"></div>
+</div>
+<script type="text/javascript" src="js/plume.js"></script>
+<script type="text/javascript" src='js/knockout-3.4.2.js'></script>
+<script type="text/javascript" src='js/places.js'></script>
+<script type="text/javascript" src='js/app.js'></script>
+<script type="text/javascript" src='js/styles.js'></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyDHMEseQ_NKYXfD4LYcNmJ85W8OjRoa_y4&v=3&callback=initMap" onerror="googleError()">
+</script>
+</body>
+</html>

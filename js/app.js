@@ -1,3 +1,5 @@
+import { api } from "./api/constants"
+
 var map;
 var infoWindow;
 // Create a new blank array for all the listing markers.
@@ -47,20 +49,16 @@ function initMap() {
         bounce(this);
       });
 
-      // Foursquare API info.
-      var client_id = 'BMSPJ41XVXZII31TBBRUI4AXRY4NQ3Z1GGFHEA1IW3ZH0GNS';
-      var client_secret = 'VBVSAO0KN4SNXYPZSMRCSNHJEL343OSOXCKHLHOWZIZTAEVT';
-      var foursquareURL = 'https://api.foursquare.com/v2/venues/search';
       var venue, street, city, phone, infoWindowContent;
 
       // Call Foursquare API.
       $.ajax({
         method: 'GET',
-        url: foursquareURL,
+        url: api.foursquareURL,
         dataType: 'json',
         data: {
-          client_id: client_id,
-          client_secret: client_secret,
+          client_id: api.client_id,
+          client_secret: api.client_secret,
           query: marker.title,
           ll: '51.048615,-114.070846',
           v: '20170801'
